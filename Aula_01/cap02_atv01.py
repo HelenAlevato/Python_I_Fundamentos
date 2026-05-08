@@ -1,6 +1,10 @@
-numero1 = input("Digite o primeiro número da soma: ")
-numero2 = input("Digite o segundo número da soma: ")
+import os
+os.system('cls')
 
-soma = float(numero1) + float(numero2)
+numero1 = float(input("Digite o primeiro número: "))
+numero2 = float(input("Digite o segundo número: "))
 
-print(f"O resultado da soma é {soma:.2f}")
+soma = numero1 + numero2
+
+print(f"O resultado da soma é = {soma:.2f}") # o .2f representa quantidade de casas depois da virgula
+
