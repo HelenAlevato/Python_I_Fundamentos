@@ -10,7 +10,14 @@ os.system('cls' if os.name=="nt" else "clear")
 numero1 = int(input("Primeiro número: "))
 numero2 = int(input("Segundo número: "))
 
-maior
-menor
 
-if 
+
+
+if numero1 > numero2:
+    print("Número 1 é maior")
+elif numero1 < numero2:
+    print("Número 2 é maior")
+elif numero1 == numero2:
+    print("Os números são iguais")
+
+
