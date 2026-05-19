@@ -8,27 +8,20 @@ import funcoes as fn
 # informar dois números
 # visualizar resultado
 
-funcoes = int(input('''Escolha uma opção:
+while True:
+    numero1 = int(input("escolha o primeiro número da conta: "))
+    numero2 = int(input("escolha o segundo número da conta: "))
+    op = int(input('''Escolha uma opção:
                     [1] - soma
                     [2] - subtração
                     [3] - dividir
                     [4] - multiplicar
+                    [5] - sair
                     '''))
-
-while True:
-    numero1 = int(input("escolha o primeiro número da conta: "))
-    numero2 = int(input("escolha o segundo número da conta: "))
-    resultado = 0
-    if funcoes == 1:
-        resultado = fn.somar(numero1,numero2)
-    elif funcoes == 2:
-        resultado =  fn.subtrair(numero1,numero2)
-    elif funcoes == 3:
-        resultado =  fn.dividir(numero1,numero2)
-    elif funcoes == 4:
-        resultado = fn.multiplicar(numero1,numero2)
-    else:
-        print("Rode novamente o sistema!")
+    if op == 5:
+        break
+    
+    resultado = fn.calculadora(numero1, numero2, op)
 
     print(f"Seu resultado é: {resultado}")
 

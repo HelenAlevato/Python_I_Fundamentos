@@ -1,22 +1,28 @@
 import os
 os.system('cls' if os.name == "nt" else "clear")
+import funcoes as fn
 
-lista = []
-
+lista_alunos = []
 while True:
-    nome = input("Digite um nome: ")
-    if not nome in lista:
-        lista.append(nome)
+    escolha = input('''Escolha uma opção:
+                    [1] Adicionar alunos
+                    [2] Listar alunos
+                    [3] Buscar alunos
+                    [4] Remover alunos
+                    [5] Sair
+                    ''' )
+    
+    if escolha > 0 and escolha < 6:
+        if escolha == 1:
+            nome = input("Digite um nome:")
+            fn.add_aluno(lista_alunos,nome)
+        elif escolha == 2:
+            fn.listar_alunos(lista_alunos)
+        elif escolha == 3:
+            fn.buscar_alunos(lista_alunos,nome)
+        elif escolha == 4:
+            fn.remover_alunos(lista_alunos,nome)
+        elif escolha == 5:
+            break
     else:
-        print("Esse nome já foi adicionado!!!")
-
-    op = input("Deseja incluir outro nome na lista? s / n").lower()
-    if op == "n":
-        break
-
-busca = input("Digite um nome que queira buscar na lista: ").upper()
-if busca in lista:
-    print("O nome foi encontrado!")
-
-for i, nome in enumerate(lista):
-    print(f"I: {i} / Nome: {nome}")
+        print("Opção inválida!!!")
