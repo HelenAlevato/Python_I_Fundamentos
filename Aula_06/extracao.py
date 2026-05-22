@@ -7,4 +7,8 @@ requisicao = requests.get(url)
 
 site = BeautifulSoup(requisicao.text, "html.parser")
 
-print(site.prettify())
+titulos = site.find_all("h3")
+for t in titulos:
+    print(t.text)
+
+# print(site.prettify())
