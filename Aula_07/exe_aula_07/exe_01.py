@@ -13,32 +13,34 @@ os.system('cls' if os.name == "nt" else "clear")
 # Maria - Média: 7.75 - Aprovado
 
 
-# for com os inputs dos dados
-for alunos in sequence:
-    nome = input("Qual o nome do aluno? ")
-    nota1 = int(input("Primeira nota: "))
-    nota2 = int(input("Segunda nota: "))
-    nota3 = int(input("Terceira nota: "))
-    nota4 = int(input("Quarta nota: "))
+sala_de_aula = []
+
+def cadastrar_alunos(nome, nota1, nota2, nota3, nota4):
     media = (nota1 + nota2 + nota3 + nota4) / 4
-    print(f"{nome} e {media}")
-    
-# situacao = ""
-# if situacao == media =< 6:
-#     situacao = "Reprovado"
-# elif situacao == media >= 7:
-#     situacao == "Aprovado"
-# else:
-#     print("Digite uma opção valida!")
 
-# objetos de array
+    if media >= 7:
+        situacao = "Aprovado"
+    else:
+        situacao = "Reprovado"
 
-# cadastrar_alunos {
-#     [
-#         nome: nome,
-#         media: media,
-#         situacao: ""
-#     ]
-# }
+    aluno = (nome, media, situacao)
+    sala_de_aula.append(aluno)
 
-# tratativa de erros imprimir
+# quantidade de alunos
+quantidade = int(input("Quantos alunos deseja cadastrar? "))
+
+for i in range(quantidade):
+    print(f"\nAluno {i+1}")
+
+    nome = input("Qual o nome do aluno? ")
+    nota1 = float(input("Primeira nota: "))
+    nota2 = float(input("Segunda nota: "))
+    nota3 = float(input("Terceira nota: "))
+    nota4 = float(input("Quarta nota: "))
+
+    cadastrar_alunos(nome, nota1, nota2, nota3, nota4)
+
+print("\n--- RESULTADO ---")
+
+for aluno in sala_de_aula:
+    print(f"{aluno[0]} - Média: {aluno[1]:.2f} - {aluno[2]}")
