@@ -21,6 +21,7 @@ def exe01():
     except Exception as erro:
         print(f"Erro = {erro}")  
 
+# exe01()
 
 def exe02():
     lista = []
@@ -50,4 +51,31 @@ def exe02():
     except Exception as erro:
         print(erro)
 
-exe02()    
+# exe02()   
+
+def exe03():
+    lista = [1,2,3,4,5,6,7,8,9,10]
+    print(maiornumero(lista))
+    print(menornumero(lista))
+    print(medianumeros(lista))
+    print(numerospares(lista))
+
+#exe03()
+
+#
+def exe04():
+    try:
+        extrair_titulos("https://www.globo.com/")
+    except Exception as erro:
+        print(erro)
+
+# exe04()
+
+#
+def exe05():
+    try:
+        extrair_links("https://www.uol.com/", "a")
+    except Exception as erro:
+        print(erro)
+
+# exe05()
