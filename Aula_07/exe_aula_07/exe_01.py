@@ -18,6 +18,7 @@ sala_de_aula = []
 def cadastrar_alunos(nome, nota1, nota2, nota3, nota4):
     media = (nota1 + nota2 + nota3 + nota4) / 4
 
+    # situacao = "Aprovado" if media >= 7 else "Reprovado"
     if media >= 7:
         situacao = "Aprovado"
     else:
